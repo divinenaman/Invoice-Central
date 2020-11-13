@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Generate Invoice</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #submit {
+        color: #fff;
+        background-color: #000;
+      }
+
+      .active-option {
+        color: red;
+      }
+
+      .search-list {
+        margin-left: 8%;
+        margin-right: 9%;
+        height: 30vh;
+        overflow-y: scroll;
+      }
+    </style>
+  </head>
+  <body align="center">
+    <h1>Invoice</h1>
+    <div>
+      <div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <button
+              class="btn btn-outline-secondary dropdown-toggle"
+              type="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Search By
+            </button>
+            <div class="dropdown-menu" name="dropdown">
+              <span class="dropdown-item active-option" data-field="name"
+                >Name</span
+              >
+              <span class="dropdown-item" data-field="productId"
+                >Product ID</span
+              >
+              <span class="dropdown-item" data-field="type">Type</span>
+              <span class="dropdown-item" data-field="desc">Description</span>
+              <span class="dropdown-item" data-field="date">Date</span>
+            </div>
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            aria-label="Text input with dropdown button"
+            placeholder="Search Product"
+            id="query"
+          />
+          <div class="input-group-append">
+            <button class="btn btn-dark" type="button" id="search">
+              Search
+            </button>
+          </div>
+        </div>
+        <div class="search-list"></div>
+      </div>
+      <div class="col-md-12">
+        <div class="col-md-12">
+          <h4>Client Details</h4>
+          <input
+            type="radio"
+            name="ctype"
+            value="invoiceCentral"
+            onclick="handleClient(event)"
+          /><label> InvoiceCentral User</label><br />
+          <input
+            type="radio"
+            name="ctype"
+            value="local"
+            onclick="handleClient(event)"
+          /><label> Other</label>
+          <div class="col-md-12" name="client"></div>
+        </div>
+
+        <div class="col-md-12 cart">
+          <h4>Invoice Details</h4>
+        </div>
+        <button name="submit" class="btn btn-dark">Submit</button>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../views/js/invoice.js"></script>
+  </body>
+</html>

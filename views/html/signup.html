@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Signup Form</title>
+    <style>
+      body {
+        background: url(https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80)
+          no-repeat;
+        background-size: cover;
+        font-family: sans-serif;
+      }
+      .sign {
+        max-width: 350px;
+        border-radius: 20px;
+        margin: auto;
+        box-sizing: border-box;
+        padding: 40px;
+        color: #000;
+        margin-top: 100px;
+      }
+      h2 {
+        text-align: center;
+      }
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 12px 5px;
+        background: rgba(0, 0, 0, 0.1);
+        outline: none;
+        border: none;
+        border-bottom: 1px #4caf50;
+        color: #4caf50;
+        border-radius: 5px;
+        margin: 5px;
+        font-weight: bold;
+      }
+      input[type="file"],
+      input[type="submit"] {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px 0;
+        margin-top: 30px;
+        outline: none;
+        border: none;
+        background: #4caf50;
+        border-radius: 20px;
+        font-size: 20px;
+        color: #fff;
+      }
+      input[type="file"],
+      input[type="submit"]:hover {
+        background: #4caf50;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sign">
+      <h2>Sign up</h2>
+      <form action="/signup" method="POST" enctype="multipart/form-data">
+        <input type="text" placeholder="name" name="name" required />
+        <input type="text" name="username" placeholder="username" required />
+        <input
+          placeholder="password"
+          required
+          type="password"
+          name="password"
+        />
+        <input type="text" name="email" placeholder="email" required />
+        <input type="text" name="mobile" placeholder="mobile" required />
+        <input type="submit" name="signup" />
+      </form>
+      <br>
+      <a href="http://localhost:3000/login/"><span>Login</span></a>
+    </div>
+  </body>
+</html>
