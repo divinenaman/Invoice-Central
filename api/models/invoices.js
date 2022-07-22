@@ -1,45 +1,44 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const invoiceSchema = Schema({
+  id: {
+    type: Schema.Types.ObjectId,
+  },
 
-    id:{
-        type: Schema.Types.ObjectId
+  client: {
+    type: Object,
+  },
+
+  shop: {
+    type: String,
+  },
+
+  items: [
+    {
+      type: String,
     },
+  ],
 
-    client: {
-        type: Object,
-    },
+  quantity: {
+    type: Object,
+  },
 
-    shop:{
-        type: String,
-    },
+  date_added: {
+    type: String,
+  },
 
-    items:[{
-        type: String,
-    }],
+  order_status: {
+    type: String,
+    enum: ["Paid", "Unpaid"],
+    default: "Paid",
+  },
 
-    quantity: {
-        type: Object,
-    },
+  discount: {
+    type: String,
+    default: 0,
+  },
+});
 
-    date_added:{
-        type: String,
-    },
-
-    order_status:{
-        type: String,
-        enum: ['Paid','Unpaid'],
-        default: 'Paid'
-    },
-      
-    discount: {
-        type: String,
-        default: 0
-    }
-
-
-})
-
-const Invoices = mongoose.model('invoices',invoiceSchema)
-module.exports = Invoices
+const Invoices = mongoose.model("invoices", invoiceSchema);
+module.exports = Invoices;
