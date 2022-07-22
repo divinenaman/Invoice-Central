@@ -23,7 +23,7 @@ An easy to use invoicing app to generate and manage invoices. It allows users to
 
 
 Note:
-- MongoDB should be running on localhost port 27017, to change, edit ![server.js](/server.js) line no. 19 
+- MongoDB should be running on localhost port 27017, to change, edit [server.js](/server.js) line no. 19 
 
 ### 1. Package Installation:
 
